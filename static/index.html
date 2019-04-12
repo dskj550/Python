@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#main').css('color','red');
+// 			$('button').click(function(){
+// 				console.log(this);
+// 				$(this).hide();
+// 			});
+			$('.ajaxget').click(function(){
+				$.get('http://127.0.0.1:8000/user/show?id=123',function(data){
+					console.log(data)
+				})
+			});
+			$('.ajaxtest').click(function(){
+				$.ajax('http://127.0.0.1:8000/user/show?id=123',function(data){
+					console.log(data)
+				})
+			});
+		});
+	</script>
+	<body>
+		<div id="main">
+			test test
+		</div>
+		<hr>
+		<button>test click</button>
+		<hr>
+		<button class="ajaxget">ajax get</button>
+		<button class="ajaxpost">ajax post</button>
+		<button class="ajaxtest">ajax test</button>
+	</body>
+</html>
